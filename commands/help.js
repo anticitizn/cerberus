@@ -10,7 +10,7 @@ exports.run = (client, message) => {
   .setThumbnail("https://cdn.dribbble.com/users/5518/screenshots/1092257/_2x_cerberus.png")
   .setTimestamp()
   .addField("Command list",
-    "$help $ping $duel $pfp $ree $down $status $reload $eval")
+    "$help $ping $duel $pfp $ree $down $rp $status $reload $eval")
   .addBlankField(true)
  
   message.channel.send({embed});
