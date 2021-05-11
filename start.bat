@@ -1,2 +1,0 @@
-node mybot.js
-pause

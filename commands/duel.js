@@ -1,6 +1,4 @@
 exports.run = (client, message, args) => {
-	var sleep = require('system-sleep');
-
 	let author = message.author.username
 	let duellist = message.mentions.users.first()
 	if(!duellist) return message.reply(" you did not specify who you want to duel!")
@@ -35,17 +33,19 @@ exports.run = (client, message, args) => {
 							  setTimeout(function(){
 							    msg.edit(':desert:');
 							  }, 2000)
+							  
 							  setTimeout(function(){
 							    msg.edit(':city_sunset:');
 							  }, 4000)
+
 							  setTimeout(function(){
 							    msg.edit(':city_dusk:');
 							  }, 6000)
-							  sleep(6000)
 							  const filter = m => m.content.includes('pew')
 
-							  message.channel.awaitMessages(filter, { maxMatches: 1, time: 5000, errors: ['time'] })
+							  message.channel.awaitMessages(filter, {max: 1, time: 10000, errors: ['time']} )
 								.then(collected => {
+									console.log("reached 1")
 									let winner, loser
 								  	if (collected.first().author.id == fighter1) {
 								  		winner = fighter1n
